@@ -2,10 +2,11 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
-
+mongoose.connect('mongodb+srv://Brad123:P!ssw0rd123@cluster0-zhnnh.mongodb.net/noder_rest_imagepost?retryWrites=true');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
